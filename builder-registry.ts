@@ -3,6 +3,7 @@ import { Builder } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import ProductView from "./components/ProductView/ProductView";
 import TextBox from "./components/TextBox/TextBox";
 
 Builder.registerComponent(Counter, {
@@ -40,6 +41,38 @@ Builder.registerComponent(TextBox, {
     },
     {
       name: "headline",
+      type: "string",
+      required: true,
+    },
+  ],
+});
+
+Builder.registerComponent(ProductView, {
+  name: "ProductView",
+  inputs: [
+    {
+      name: "author",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "cover",
+      type: "string",
+    },
+    {
+      name: "description",
+      type: "string",
+    },
+    {
+      name: "rank",
+      type: "number",
+    },
+    {
+      name: "releaseDate",
+      type: "string",
+    },
+    {
+      name: "title",
       type: "string",
       required: true,
     },
