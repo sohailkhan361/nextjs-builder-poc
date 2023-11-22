@@ -17,6 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ list = [{ name: 'Home' }] }) => {
                 alt='next'
                 width={100}
                 height={100}
+                priority={true}
             />
             <div className='hidden md:flex gap-5 text-lg font-bold'>
                 {list.map((item) => (

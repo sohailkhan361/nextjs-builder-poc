@@ -24,6 +24,7 @@ const ProductView: React.FC<ProductViewProps> = (props) => {
                     width={400}
                     alt='Book Cover'
                     src={cover}
+                    priority={true}
                 />
             </div>
             <div className='flex flex-col p-4 font-bold md:border-l-4 pl-6'>

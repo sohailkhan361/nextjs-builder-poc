@@ -21,6 +21,7 @@ const Footer: React.FC<FooterProps> = ({ list = [{ name: 'Address' }] }) => {
                         width={118}
                         height={18}
                         className='object-contain'
+                        priority={true}
                     />
                     <p className='text-base text-gray-700'>
                         Audible 2023 <br />
