@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
-import ProductView from '@/components/ProductView/ProductView';
+import ProductView, { Book } from '@/components/ProductView/ProductView';
 import ProductsGrid from '@/components/ProductsGrid/ProductsGrid';
 import { BuilderElement, builder } from '@builder.io/sdk';
 
@@ -54,7 +54,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between shadow-sm">
       <Navbar list={navItems} />
-      {book && <ProductView {...book as BuilderElement} />}
+      {book && <ProductView {...book as Book} />}
       <div className='flex flex-col mt-10 border-t-2'>
         <div className='font-bold flex justify-center text-xl p-8'>Our Collection</div>
         <ProductsGrid books={bookCollectionItems} />

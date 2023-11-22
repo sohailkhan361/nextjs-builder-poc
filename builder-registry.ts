@@ -54,11 +54,13 @@ Builder.registerComponent(ProductView, {
     {
       name: "author",
       type: "string",
-      required: true,
+      required: false,
     },
     {
       name: "cover",
       type: "string",
+      required: false,
+      defaultValue: "https://podiumaudio.com/wp-content/uploads/2022/09/Book-Cover-default-768x768.jpeg",
     },
     {
       name: "description",
@@ -71,11 +73,13 @@ Builder.registerComponent(ProductView, {
     {
       name: "releaseDate",
       type: "string",
+      required: false,
     },
     {
       name: "title",
       type: "string",
       required: true,
+      defaultValue: 'Sample Title here'
     },
   ],
 });
@@ -106,6 +110,7 @@ Builder.registerComponent(ProductsGrid, {
               {
                   name: 'cover',
                   type: 'string',
+                  defaultValue: "https://podiumaudio.com/wp-content/uploads/2022/09/Book-Cover-default-768x768.jpeg",
               },
               {
                   name: 'releaseDate',

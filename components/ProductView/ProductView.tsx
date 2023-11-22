@@ -2,7 +2,7 @@ import { BuilderElement } from '@builder.io/sdk';
 import Image from 'next/image'
 import React from 'react'
 
-type Book = {
+export type Book = {
     title: string;
     description?: string;
     author: string;
@@ -11,11 +11,8 @@ type Book = {
     releaseDate: string;
 };
 
-type ProductViewProps = Book | BuilderElement;
 
-const ProductView: React.FC<ProductViewProps> = (props) => {
-    const { title, description, author, rank, cover, releaseDate } = props as Book;
-
+const ProductView: React.FC<Book> = ({ title, description, author, rank, cover, releaseDate }) => {
     return (
         <div className='grid md:grid-cols-2 p-2 sm:grid-cols-1'>
             <div className='flex justify-center p-4'>
