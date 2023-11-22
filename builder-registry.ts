@@ -81,12 +81,37 @@ Builder.registerComponent(ProductView, {
 });
 
 Builder.registerComponent(ProductsGrid, {
-  name: "ProductsGrid",
+  name: 'ProductsGrid',
   inputs: [
-    {
-      name: "books",
-      type: "list",
-      required: true,
-    },
+      {
+          name: 'books',
+          type: 'list',
+          subFields: [
+              {
+                  name: 'title',
+                  type: 'string',
+              },
+              {
+                  name: 'description',
+                  type: 'string',
+              },
+              {
+                  name: 'author',
+                  type: 'string',
+              },
+              {
+                  name: 'rank',
+                  type: 'number',
+              },
+              {
+                  name: 'cover',
+                  type: 'string',
+              },
+              {
+                  name: 'releaseDate',
+                  type: 'string',
+              },
+          ],
+      },
   ],
 });

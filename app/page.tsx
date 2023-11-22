@@ -32,20 +32,33 @@ export default async function Home() {
     },
   });
 
+  const bookCollection = await builder.getAll('book-collection', {
+    query: {
+      name: 'collection-1',
+    },
+  });
+
   const navItems = navListData[0]?.data?.list || [];
   const footItems = footListData[0]?.data?.list || [];
-  const bookItems = bookSeries[0].data?.list || [];
+  const bookCollectionItems = bookCollection[0]?.data?.books || [];
+  const bookSeriesItems = bookSeries[0]?.data?.list || [];
   const book = bookData[0]?.data;
 
-  // console.log(bookSeries[0].data?.list);
+  // builder.get('book-collection').promise().then(({ data }) => {
+  //   // Do something with the data
+  //   console.log(data.products[2].book);
+  // })
+
+  // console.log(bookCollection[0]?.data?.books);
 
   return (
-    <main className="flex min-h-screen flex-col justify-between">
+    <main className="flex min-h-screen flex-col justify-between shadow-sm">
       <Navbar list={navItems} />
       {book && <ProductView {...book as BuilderElement} />}
       <div className='flex flex-col mt-10 border-t-2'>
         <div className='font-bold flex justify-center text-xl p-8'>Our Collection</div>
-        <ProductsGrid books={bookItems} />
+        <ProductsGrid books={bookCollectionItems} />
+        {/* <ProductsGrid books={bookSeriesItems} /> */}
       </div>
       <Footer list={footItems} />
     </main>
