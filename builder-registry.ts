@@ -3,6 +3,7 @@ import { Builder } from "@builder.io/react";
 import Counter from "./components/Counter/Counter";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import ProductsGrid from "./components/ProductsGrid/ProductsGrid";
 import ProductView from "./components/ProductView/ProductView";
 import TextBox from "./components/TextBox/TextBox";
 
@@ -24,8 +25,8 @@ Builder.registerComponent(Navbar, {
   name: "Navbar",
   inputs: [
     {
-      name: "navItems",
-      type: "string",
+      name: "list",
+      type: "list",
       required: true,
     },
   ],
@@ -74,6 +75,17 @@ Builder.registerComponent(ProductView, {
     {
       name: "title",
       type: "string",
+      required: true,
+    },
+  ],
+});
+
+Builder.registerComponent(ProductsGrid, {
+  name: "ProductsGrid",
+  inputs: [
+    {
+      name: "books",
+      type: "list",
       required: true,
     },
   ],
